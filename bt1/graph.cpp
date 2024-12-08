@@ -82,7 +82,6 @@ vector<double> multiply(const vector<vector<double>>& matrix, const vector<doubl
     QueryPerformanceCounter(&end);
     double elapsed_time = static_cast<double>(end.QuadPart - start.QuadPart) / frequency.QuadPart;
     cout << "Sequential runtime: " << elapsed_time << " seconds" << endl;
-    cout << endl;
     return result;
 }
 
@@ -102,12 +101,10 @@ int main() {
     printVector(vector_1, n);
 
     // Tính toán kết quả
-    cout << endl;
     vector<double> result1 = multiplyParallel(matrix, vector_1, n);
     vector<double> result2 = multiply(matrix, vector_1, n);
 
     // Hiển thị kết quả
-    cout << endl;
     cout << "Result (Parallel): ";
     printVector(result1, n);
 
