@@ -11,7 +11,7 @@ void randomMatrix(vector<vector<double>>& matrix, int n) {
     matrix.resize(n, vector<double>(n));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            matrix[i][j] = rand() % 100; // Giới hạn giá trị trong khoảng [0, 99] cho dễ nhìn
+            matrix[i][j] = rand() % 100; // Giới hạn giá trị trong khoảng [0, 99]
         }
     }
 }
@@ -51,7 +51,7 @@ vector<double> multiplyParallel(const vector<vector<double>>& matrix, const vect
     QueryPerformanceFrequency(&frequency);
     QueryPerformanceCounter(&start);
 
-#pragma omp parallel for num_threads(12)
+#pragma omp parallel for num_threads(8) // Điều chỉnh số luồng
     for (int i = 0; i < n; i++) {
         result[i] = 0;
         for (int j = 0; j < n; j++) {
