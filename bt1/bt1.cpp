@@ -45,7 +45,11 @@ static void printVector(const vector<double>& vec, int n) {
 }
 
 // Hàm nhân ma trận với vector song song
-vector<double> multiplyParallel(const vector<vector<double>>& matrix, const vector<double>& vector_1, int n) {
+vector<double> multiplyParallel(
+    const vector<vector<double>>& matrix, 
+    const vector<double>& vector_1, int n
+) 
+{
     vector<double> result(n);
     LARGE_INTEGER frequency, start, end;
     QueryPerformanceFrequency(&frequency);
@@ -60,13 +64,17 @@ vector<double> multiplyParallel(const vector<vector<double>>& matrix, const vect
     }
 
     QueryPerformanceCounter(&end);
-    double elapsed_time = static_cast<double>(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+    double elapsed_time = 
+        static_cast<double>(end.QuadPart - start.QuadPart) / frequency.QuadPart;
     cout << "Parallel runtime: " << elapsed_time << " seconds" << endl;
     return result;
 }
 
 // Hàm nhân ma trận với vector tuần tự
-vector<double> multiply(const vector<vector<double>>& matrix, const vector<double>& vector_1, int n) {
+vector<double> multiply(
+    const vector<vector<double>>& matrix, 
+    const vector<double>& vector_1, int n
+) {
     vector<double> result(n);
     LARGE_INTEGER frequency, start, end;
     QueryPerformanceFrequency(&frequency);
@@ -80,7 +88,8 @@ vector<double> multiply(const vector<vector<double>>& matrix, const vector<doubl
     }
 
     QueryPerformanceCounter(&end);
-    double elapsed_time = static_cast<double>(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+    double elapsed_time = 
+        static_cast<double>(end.QuadPart - start.QuadPart) / frequency.QuadPart;
     cout << "Sequential runtime: " << elapsed_time << " seconds" << endl;
     cout << endl;
     return result;
