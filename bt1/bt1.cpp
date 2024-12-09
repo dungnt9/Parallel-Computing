@@ -7,7 +7,7 @@
 using namespace std;
 
 // Hàm tạo ma trận ngẫu nhiên
-void randomMatrix(vector<vector<double>>& matrix, int n) {
+static void randomMatrix(vector<vector<double>>& matrix, int n) {
     matrix.resize(n, vector<double>(n));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -17,7 +17,7 @@ void randomMatrix(vector<vector<double>>& matrix, int n) {
 }
 
 // Hàm tạo vector ngẫu nhiên
-void randomVector(vector<double>& vec, int n) {
+static void randomVector(vector<double>& vec, int n) {
     vec.resize(n);
     for (int i = 0; i < n; i++) {
         vec[i] = rand() % 100; // Giới hạn giá trị trong khoảng [0, 99]
