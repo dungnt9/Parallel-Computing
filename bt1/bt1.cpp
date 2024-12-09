@@ -25,7 +25,7 @@ static void randomVector(vector<double>& vec, int n) {
 }
 
 // Hàm in ma trận ra console
-void printMatrix(const vector<vector<double>>& matrix, int n) {
+static void printMatrix(const vector<vector<double>>& matrix, int n) {
     cout << "Matrix (" << n << "x" << n << "):" << endl;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -36,7 +36,7 @@ void printMatrix(const vector<vector<double>>& matrix, int n) {
 }
 
 // Hàm in vector ra console
-void printVector(const vector<double>& vec, int n) {
+static void printVector(const vector<double>& vec, int n) {
     cout << "Vector (" << n << "): ";
     for (int i = 0; i < n; i++) {
         cout << vec[i] << " ";
